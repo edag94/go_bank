@@ -1,13 +1,13 @@
 package Sum_of_Left_Leaves
 
-/**
- * Definition for a binary tree node.
- *
- */
-type TreeNode struct {
-	Val   int
-	Left  *TreeNode
-	Right *TreeNode
+import (
+	"github.com/edag94/go_bank/utils"
+)
+
+type TreeNode = utils.TreeNode
+
+func isLeaf(node *TreeNode) bool {
+	return node != nil && node.Left == nil && node.Right == nil
 }
 
 func sumOfLeftLeaves(root *TreeNode) int {
@@ -22,8 +22,4 @@ func sumOfLeftLeaves(root *TreeNode) int {
 		sum += sumOfLeftLeaves(root.Right)
 	}
 	return sum
-}
-
-func isLeaf(node *TreeNode) bool {
-	return node != nil && node.Left == nil && node.Right == nil
 }
