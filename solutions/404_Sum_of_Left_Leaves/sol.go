@@ -15,9 +15,12 @@ func sumOfLeftLeaves(root *TreeNode) int {
 	if root == nil {
 		return sum
 	} else {
+		// if left node is leaf, add to sum
 		if isLeaf(root.Left) {
 			sum += root.Left.Val
 		}
+
+		// recurse further down tree
 		sum += sumOfLeftLeaves(root.Left)
 		sum += sumOfLeftLeaves(root.Right)
 	}
