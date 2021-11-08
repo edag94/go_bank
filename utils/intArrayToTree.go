@@ -6,8 +6,10 @@ type TreeNode struct {
 	Right *TreeNode
 }
 
+// NULL is convenient for adding test data
 var NULL int = -1 << 63
 
+// Generate binary tree from array in leetcode examples
 func IntArrayToTreeNode(ints []int) *TreeNode {
 	n := len(ints)
 	if n == 0 {

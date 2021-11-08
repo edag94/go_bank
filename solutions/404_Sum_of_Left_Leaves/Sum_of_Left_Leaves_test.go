@@ -7,7 +7,7 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-func test(t *testing.T) {
+func Test(t *testing.T) {
 	treeArray := []int{1, 2, 3, 4, 5}
 	input := utils.IntArrayToTreeNode(treeArray)
 	sum := sumOfLeftLeaves(input)
