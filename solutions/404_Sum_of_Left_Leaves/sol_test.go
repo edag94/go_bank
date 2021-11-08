@@ -3,7 +3,7 @@ package Sum_of_Left_Leaves
 import (
 	"testing"
 
-	"github.com/edag94/go_bank/utils"
+	utils "github.com/edag94/go_bank/utils"
 	"github.com/stretchr/testify/assert"
 )
 
