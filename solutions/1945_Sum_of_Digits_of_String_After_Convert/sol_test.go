@@ -7,7 +7,11 @@ import (
 )
 
 func Test(t *testing.T) {
-	s, k := "leetcode", 2
-	ans := getLucky(s, k)
-	assert.Equal(t, 6, ans)
+	// s0, k0 := "leetcode", 2
+	// ans0 := getLucky(s0, k0)
+	// assert.Equal(t, 6, ans0)
+
+	s1, k1 := "dbvmfhnttvr", 5
+	ans1 := getLucky(s1, k1)
+	assert.Equal(t, 5, ans1)
 }

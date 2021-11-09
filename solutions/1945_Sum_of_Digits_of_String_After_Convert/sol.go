@@ -1,7 +1,6 @@
 package Sum_of_Digits_of_String_After_Convert
 
 import (
-	"math"
 	"strconv"
 )
 
@@ -13,6 +12,8 @@ import (
 	3. a transform loop, which takes a k and calls transform on a loop
 
 	Then combine these two in the top level functions
+
+	Keep everything as a string, to prevent overflow
 */
 
 func getLucky(s string, k int) int {
@@ -20,32 +21,29 @@ func getLucky(s string, k int) int {
 	return transformKTimes(digits, k)
 }
 
-func stringToDigits(s string) int {
+func stringToDigits(s string) string {
 	digitStr := ""
 	for i := 0; i < len(s); i++ {
 		numOfAlpha := int(s[i]) % 32
 		numOfAlphaStr := strconv.Itoa(numOfAlpha)
 		digitStr += numOfAlphaStr
 	}
-	digits, _ := strconv.Atoi(digitStr)
-	return digits
+	return digitStr
 }
 
-func transform(n int) int {
-	numberOfDigits := int(math.Floor(math.Log10(float64(n)))) + 1
+func transform(s string) string {
 	sum := 0
-	for i := 0; i < numberOfDigits; i++ {
-		temp := n
-		temp = temp / int(math.Pow10(i))
-		temp = int(math.Mod(float64(temp), 10))
-		sum += temp
+	for _, c := range s {
+		num, _ := strconv.Atoi(string(c))
+		sum += num
 	}
-	return sum
+	return strconv.Itoa(sum)
 }
 
-func transformKTimes(n int, k int) int {
+func transformKTimes(s string, k int) int {
 	for i := 0; i < k; i++ {
-		n = transform(n)
+		s = transform(s)
 	}
-	return n
+	num, _ := strconv.Atoi(s)
+	return num
 }
