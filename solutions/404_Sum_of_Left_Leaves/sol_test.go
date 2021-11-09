@@ -11,5 +11,5 @@ func Test(t *testing.T) {
 	treeArray := []int{1, 2, 3, 4, 5}
 	input := utils.IntArrayToTreeNode(treeArray)
 	sum := sumOfLeftLeaves(input)
-	assert.Equal(t, sum, 4)
+	assert.Equal(t, 4, sum)
 }
