@@ -21,8 +21,17 @@ func minNumberOperations(target []int) int {
 	var operationCount int = target[0]
 	for i := 1; i < len(target); i++ {
 		if target[i] > target[i-1] {
+			/*
+				how many times can target[i] be incremented with
+				target[i-1] before it becomes its own subarray
+				and needs futher incrementing
+			*/
 			operationCount += target[i] - target[i-1]
 		}
+		/*
+			if not greater, can be incremented in a subarray
+			with the previous elts, so no need to add to operationCount
+		*/
 	}
 	return operationCount
 }
