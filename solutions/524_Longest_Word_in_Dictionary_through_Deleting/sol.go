@@ -1,5 +1,6 @@
 package Longest_Word_in_Dictionary_through_Deleting
 
+// can improve on this by sorting dictionary by len desc
 func findLongestWord(s string, dictionary []string) string {
 	sol := ""
 	for i := range dictionary {
